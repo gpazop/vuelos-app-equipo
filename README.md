@@ -2,7 +2,7 @@
 
 [**Abrir la aplicación en Streamlit**](https://vuelos-app-guille.streamlit.app/)
 
-Aplicación interactiva para explorar los retrasos de llegada de **325.802 vuelos completados** que salieron de Nueva York en 2013 desde **JFK, LaGuardia (LGA) y Newark (EWR)**. El proyecto analiza cómo se relacionan la hora programada, el clima y la antigüedad del avión con la puntualidad. Se desarrolló como parte de la Unidad 9 de Big Data.
+Aplicación interactiva para explorar los retrasos de llegada de **325.802 vuelos completados** que salieron de Nueva York en 2013 desde **JFK, LaGuardia (LGA) y Newark (EWR)**. El proyecto analiza cómo se relacionan la hora programada, el clima y la antigüedad del avión con la puntualidad. Se desarrolló como parte de la semana 15 de Big Data.
 
 ## Qué puedes explorar
 
