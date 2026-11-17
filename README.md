@@ -37,6 +37,29 @@ El archivo comprimido reúne registros de vuelos, clima, aviones, aerolíneas y 
 
 El análisis exploratorio se hizo con **pandas y Plotly**. La app usa **Streamlit** para la interfaz y **SciPy** para el cálculo de Spearman a través de pandas.
 
+## Notebook y tablero de Power BI
+
+El análisis exploratorio usa Plotly para comparar la puntualidad por horario, clima y aerolínea. El tablero de Power BI reúne cinco indicadores, cuatro gráficos y segmentaciones por aeropuerto de salida y mes.
+
+- [Notebook ejecutado](analisis/Clase_Plotly_Vuelos_Estudiantes.ipynb)
+- [Tablero de Power BI (.pbix)](analisis/tablero_vuelos_guillermo.pbix)
+- [Captura del tablero](analisis/tablero_vuelos_guillermo.png)
+
+![Tablero de puntualidad de vuelos en Power BI](analisis/tablero_vuelos_guillermo.png)
+
+Abre el archivo `.pbix` en Power BI Desktop para consultar el modelo importado. Para actualizar el origen, genera el CSV liviano desde la raíz del repositorio y selecciona su nueva ruta en la consulta `vuelos` de Power Query.
+
+```python
+import pandas as pd
+
+columnas = [
+    "fecha", "mes", "dia_semana", "hora_programada", "franja_horaria",
+    "aerolinea", "origen", "llueve", "retraso_llegada", "llego_tarde",
+]
+vuelos = pd.read_csv("vuelos_limpio.csv.gz", usecols=columnas)
+vuelos[columnas].to_csv("vuelos_powerbi_liviano.csv", index=False)
+```
+
 ## Ejecutar en local
 
 Clona el repositorio, instala las dependencias y ejecuta la app desde la raíz del proyecto.
@@ -55,6 +78,7 @@ Abre [localhost:8501](http://localhost:8501) en el navegador. Mantén el archivo
 | Archivo | Contenido |
 | --- | --- |
 | [app.py](app.py) | Código de la interfaz, los filtros, los indicadores y los gráficos. |
+| [analisis/](analisis/) | Notebook ejecutado, tablero de Power BI y captura. |
 | [requirements.txt](requirements.txt) | Dependencias de Python. |
 | [vuelos_limpio.csv.gz](vuelos_limpio.csv.gz) | Dataset limpio que utiliza la aplicación. |
 
